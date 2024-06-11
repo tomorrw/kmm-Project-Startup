@@ -29,7 +29,14 @@
           "group": "org.jetbrains.kotlin",
           "module": "kotlin-stdlib-common",
           "version": {
-            "requires": "1.9.10"
+            "requires": "1.9.23"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.23"
           }
         },
         {
@@ -101,26 +108,33 @@
           "version": {
             "requires": "2.3.2"
           }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-websockets",
+          "version": {
+            "requires": "2.3.2"
+          }
         }
       ],
       "files": [
         {
           "name": "shared.klib",
           "url": "shared-iosx64-0.0.1.klib",
-          "size": 96162,
-          "sha512": "03830dbd381d30baee02726346267560085db3922d9a1eb44807cf34d6f1eb9e9d7ea1265def5c47a50e7a6ed851f271c47aba99241124d2c49e87dd885032c0",
-          "sha256": "8fd8e704c223c2b2adf46b6c343f3485f12f98ee71b9a48961d2babbfed0d262",
-          "sha1": "4b02de96d40a89403b8203f7310b071f87bad4bc",
-          "md5": "9f07d2d726666f5954955d0c9d4f9d0d"
+          "size": 108387,
+          "sha512": "f1df14435a69a61fdf11429669cac7a0fbb46467a4f13dc9c569bd5d0aca55d59bc49806a5a917324b24485f0ef51614f2940a88b849db6b540b73b6b32fd97a",
+          "sha256": "c88430d9ce1dc100410dec3d99e1c5c3932759e06ed38ff3f49718468168098c",
+          "sha1": "b67bd76aaaed34148a4843b41cd00c0eb11ca57a",
+          "md5": "a040f26466e5d54a18c0eb86d0838bf3"
         },
         {
           "name": "shared-cinterop-libPhoneNumber_iOS.klib",
           "url": "shared-iosx64-0.0.1-cinterop-libPhoneNumber_iOS.klib",
-          "size": 18613,
-          "sha512": "06d92a1ac0884eb363a75dbb6b5205a8bbf58bde95fc74964376ae7997fea80c3571384da7e155ab4943cdbed14b27cf6b90aadd4bf76eab957818401d8ac6d2",
-          "sha256": "3bc7704c743aa491beb2162f1613e963c990b175fe08b7418fa13f047bed43d4",
-          "sha1": "4fe7ff93d6c5f17d28e5af5055f070870240e5b7",
-          "md5": "70b069bcc83731c31ca6277cc8b7fb70"
+          "size": 18709,
+          "sha512": "c035fdd9fd33ff229874b0df4d6f2448bb9cd21d609b117f30122c0c6748eb65eb1d9aac3b8020da0a64f469078e120607d1c40dd38bfce846a377d44a08664b",
+          "sha256": "7da42741a62a33badfa962181631c5a6709064be4a5afee1dae6f35d3ec28bde",
+          "sha1": "243cf6a3de9e40273d3eda9a8948c4df3ca99337",
+          "md5": "bd83185406420e08cc0abdd606fe8a1d"
         }
       ]
     },
@@ -138,11 +152,11 @@
         {
           "name": "shared-iosx64-0.0.1-sources.jar",
           "url": "shared-iosx64-0.0.1-sources.jar",
-          "size": 26274,
-          "sha512": "3ddb56cfb8d7048c25a723409d667cad88d02434beb6038ec69fe513713f0ef2eddbc8718f0f2553c9fabaa5004fafe59ef2f5f43026186823ea9dc207d9bf54",
-          "sha256": "aae11a3bcfff7ca10b12b9d0aaa399826971c8383fc34c3a302313b8a9b4d88e",
-          "sha1": "073b3630700a44a686fb983fac91d81c82919ef0",
-          "md5": "9cc5641f3444081364c23d6e47b45d32"
+          "size": 27350,
+          "sha512": "255b61402743792a13e23d2455dff3b0defbd22f0b3a0f096aaf0fb70316b6207f2050bb9b970e42146e3f61ad96199d3fd62229b32ba8fd323a63da4ea064c5",
+          "sha256": "c67a0f1533cc55dd6d2f7bb114a1c0addfb726f902e7a9bc3ce528d46bda3491",
+          "sha1": "5eaece2587fd82d50111c8250969bd0e45e6851e",
+          "md5": "dcf2729a17ae332c6a8cbb800ab42ab8"
         }
       ]
     },
@@ -160,7 +174,14 @@
           "group": "org.jetbrains.kotlin",
           "module": "kotlin-stdlib-common",
           "version": {
-            "requires": "1.9.10"
+            "requires": "1.9.23"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.23"
           }
         },
         {
@@ -232,17 +253,24 @@
           "version": {
             "requires": "2.3.2"
           }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-websockets",
+          "version": {
+            "requires": "2.3.2"
+          }
         }
       ],
       "files": [
         {
           "name": "shared-iosx64-0.0.1-metadata.jar",
           "url": "shared-iosx64-0.0.1-metadata.jar",
-          "size": 16797,
-          "sha512": "a03cd2bcd928302cccd6ee6e561c7dcf931deda916716cec2aeba0bbc7881b0378866b9f0b26fbc0de10501c1e3cd4b1deee235753d46b0dd1b61102fbe9a206",
-          "sha256": "0b93a38f03b83cb188326658652660e054050f050643fc2774c96ec96296c940",
-          "sha1": "7a59e0437941b8c56abaae4e2d99f6248074bb20",
-          "md5": "a2d62eab3a9f28644bc70974f1666a4f"
+          "size": 17003,
+          "sha512": "38679fa234eaef27160376a947206e76dc138fcade3b6c8fe61eabc1f34139cffc44ec3052f1e92072d8a57b428f677119e6be95d017e260854c868227227ef5",
+          "sha256": "8e767c7ace1a85c42f4bd3b77963f19c61c02246f70e9d6c365d5d7219cf3f94",
+          "sha1": "3de56d5e5539cd7e0df417cbdeebe7009c27087a",
+          "md5": "b14b5dc326db172e45e027f99e614a4f"
         }
       ]
     }

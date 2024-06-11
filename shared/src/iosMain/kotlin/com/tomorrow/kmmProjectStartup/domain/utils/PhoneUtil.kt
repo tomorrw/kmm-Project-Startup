@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalForeignApi::class)
+
 package com.tomorrow.kmmProjectStartup.domain.utils
 
 import cocoapods.libPhoneNumber_iOS.NBEPhoneNumberFormatINTERNATIONAL
@@ -6,7 +8,7 @@ import kotlinx.cinterop.ExperimentalForeignApi
 
 actual class PhoneUtil {
     actual companion object {
-        private val phoneUtil = NBPhoneNumberUtil()
+        private val phoneUtil =  NBPhoneNumberUtil()
 
         actual val supportedRegions: List<Region> =
             (phoneUtil.getSupportedRegions() ?: listOf<String>())

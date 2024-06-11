@@ -3,7 +3,7 @@
   "buildSystem": "Gradle",
   "buildSystemVersion": "8.4",
   "buildPlugin": "org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper",
-  "buildPluginVersion": "1.9.10",
+  "buildPluginVersion": "1.9.23",
   "projectSettings": {
     "isHmppEnabled": true,
     "isCompatibilityMetadataVariantEnabled": false,
@@ -15,8 +15,8 @@
       "platformType": "androidJvm",
       "extras": {
         "android": {
-          "sourceCompatibility": "11",
-          "targetCompatibility": "11"
+          "sourceCompatibility": "1.8",
+          "targetCompatibility": "1.8"
         }
       }
     },
@@ -26,7 +26,7 @@
       "extras": {
         "native": {
           "konanTarget": "ios_arm64",
-          "konanVersion": "1.9.10",
+          "konanVersion": "1.9.23",
           "konanAbiVersion": "1.8.0"
         }
       }
@@ -37,7 +37,7 @@
       "extras": {
         "native": {
           "konanTarget": "ios_simulator_arm64",
-          "konanVersion": "1.9.10",
+          "konanVersion": "1.9.23",
           "konanAbiVersion": "1.8.0"
         }
       }
@@ -48,7 +48,7 @@
       "extras": {
         "native": {
           "konanTarget": "ios_x64",
-          "konanVersion": "1.9.10",
+          "konanVersion": "1.9.23",
           "konanAbiVersion": "1.8.0"
         }
       }

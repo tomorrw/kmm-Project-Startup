@@ -26,7 +26,14 @@
           "group": "org.jetbrains.kotlin",
           "module": "kotlin-stdlib-common",
           "version": {
-            "requires": "1.9.10"
+            "requires": "1.9.23"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.23"
           }
         },
         {
@@ -98,17 +105,24 @@
           "version": {
             "requires": "2.3.2"
           }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-websockets",
+          "version": {
+            "requires": "2.3.2"
+          }
         }
       ],
       "files": [
         {
           "name": "shared-metadata-0.0.1.jar",
           "url": "shared-0.0.1.jar",
-          "size": 21744,
-          "sha512": "ebac785b7b28bf4593a1a793ed9a436c52fa6fe58318c1f7171c6657b81a061d3a2cc2f03a0ad87135885625793bc3981da86fdf4adff976b453ac1220dfe92a",
-          "sha256": "defee2e0bbc48478423638ccb23d4eb08353dc660828d468edb501087096a375",
-          "sha1": "f6dc15b83847092bf14d5a5131d4844f091c62ea",
-          "md5": "255d5a1a2f5f8f1b11ebf8c4fcf6d89a"
+          "size": 22056,
+          "sha512": "97908289030347a1d16a1adcda60887c5fe28daa47c89f4e63c81c9376286a70cb433bdaa1d2992e78be3f5b3756997f747531af20b82a4eb4726dbf70c3d8f7",
+          "sha256": "5583ec9b9b94e1a924d7d67a142b66e091348349d7e60fb4d42b8dd099cc6a2f",
+          "sha1": "d87be4443e60cdd71d35ffcbf614ebf954030a46",
+          "md5": "c28d950dfb281b2bb6d405d06a267f89"
         }
       ]
     },
@@ -125,11 +139,11 @@
         {
           "name": "shared-kotlin-0.0.1-sources.jar",
           "url": "shared-0.0.1-sources.jar",
-          "size": 26274,
-          "sha512": "88c10f6cbc0cd03cb79aaf86b752a99a7b9a11d41ebc178fae39037534d563fe4f5577b02ad333a5472b57254e26895cc1dfe50a7ee81814be9acb83d0de796e",
-          "sha256": "1fa0d0f8c840aba222095c2afba7ab63d3c0b6cb33d9986a85cb3c0d2dfeea67",
-          "sha1": "69136c2dce9453442bbd1f515e91839052cec500",
-          "md5": "f71481c180516c8bb48fb1e082651495"
+          "size": 27350,
+          "sha512": "f30b86658ae59fdc3f0f0e45a5157ef926be5522353cbc133b7748126a98fa5fe9db49a7a9bac8786f78bc49a453cda9cfd0fd1d0330138478e603b5aa252a29",
+          "sha256": "493c7ea1a58aa448fd505cccad2906b95ccdbd4e95e9051e261cc4e6d1c83a4b",
+          "sha1": "004d463a8293899f1ac03d105cf281bd25aa0d7a",
+          "md5": "a98dabdf57c64e8991d5c9324f7e8878"
         }
       ]
     },

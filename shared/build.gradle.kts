@@ -20,10 +20,11 @@ kotlin {
     androidTarget {
         compilations.all {
             kotlinOptions {
-                jvmTarget = "11"
+                jvmTarget = "1.8"
             }
         }
     }
+
     iosX64()
     iosArm64()
     iosSimulatorArm64()
@@ -36,6 +37,7 @@ kotlin {
         authors = iosDefinitions.authors.get()
         version = commonLibs.versions.library.version.get()
         ios.deploymentTarget = iosDefinitions.deployment.target.get()
+        publishDir = rootProject.file("./")
         framework {
             baseName = "shared"
             isStatic = true
@@ -46,7 +48,6 @@ kotlin {
             moduleName = "libPhoneNumber_iOS"
             source = git("https://github.com/iziz/libPhoneNumber-iOS")
         }
-        publishDir = rootProject.file("./")
     }
 
     sourceSets {
@@ -67,8 +68,8 @@ kotlin {
                     implementation(clientLogging)
                     implementation(auth)
                     implementation(contentNegotiation)
+                    implementation(clientWebsocket)
                 }
-
             }
         }
 
@@ -148,8 +149,8 @@ android {
         targetSdk = commonLibs.versions.android.compileSdk.get().toInt()
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11 // Ensure Java 11 compatibility
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     beforeEvaluate {

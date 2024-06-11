@@ -23,6 +23,18 @@ class Duration(val seconds: Int) {
             "$hours:$minutesPadded:$secondsPadded"
     }
 
+    fun toDurationFormatString(): String {
+        val hours = (seconds % 86400) / 3600
+        val minutes = ((seconds % 86400) % 3600) / 60
+
+
+        return if (hours == 0 && minutes == 0) "0m"
+        else if (hours == 0)
+            "${minutes}m"
+        else
+            "${hours}h:${minutes}m"
+    }
+
     fun convertTo(unit: Unit) = convert(Unit.Second, unit, seconds.toDouble())
 
     companion object {

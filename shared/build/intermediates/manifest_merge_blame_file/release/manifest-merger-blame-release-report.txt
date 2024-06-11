@@ -3,6 +3,6 @@
 3    package="com.tomorrow.kmmProjectStartup" >
 4
 5    <uses-sdk android:minSdkVersion="26" />
-5-->/Users/marcjalkh/Documents/Tomorrow/kmm-project-startup/shared/src/androidMain/AndroidManifest.xml
+5-->/Users/marcjalkh/Documents/Tomorrow/Github/kmm-Project-Startup/shared/src/androidMain/AndroidManifest.xml
 6
 7</manifest>

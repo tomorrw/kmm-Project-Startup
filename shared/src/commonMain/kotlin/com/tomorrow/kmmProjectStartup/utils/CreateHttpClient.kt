@@ -9,8 +9,10 @@ import io.ktor.client.plugins.auth.*
 import io.ktor.client.plugins.auth.providers.*
 import io.ktor.client.plugins.contentnegotiation.*
 import io.ktor.client.plugins.logging.*
+import io.ktor.client.plugins.websocket.WebSockets
 import io.ktor.client.request.*
 import io.ktor.http.*
+import io.ktor.serialization.kotlinx.KotlinxWebsocketSerializationConverter
 import io.ktor.serialization.kotlinx.json.*
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -56,6 +58,8 @@ fun createHttpClient(
             }
         }
     }
+
+    install(WebSockets) { contentConverter = KotlinxWebsocketSerializationConverter(json) }
 
     if (enableNetworkLogs) {
         install(Logging) {
