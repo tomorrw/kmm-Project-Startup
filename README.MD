@@ -7,13 +7,13 @@ A Collection of utils and tools to help you get started with a new KMM project.
 Add the following to your common `build.gradle.kts` file:
 
 ```kotlin
-implementation("com.github.tomrrw.kmmProjectStartup:shared:0.0.1")
+implementation("com.tomorrow.kmmProjectStartup:shared:0.0.1")
 ```
 
 Then add the following to your android `build.gradle.kts` file:
 
 ```kotlin
-implementation("com.github.tomrrw.kmmProjectStartup:shared-android:0.0.1")
+implementation("com.tomorrow.kmmProjectStartup:shared-android:0.0.1")
 ```
 
 `💡 Exposing shared library to IOS is important in case you need to use shared modules from this library to IOS`
