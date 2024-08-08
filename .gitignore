@@ -58,6 +58,6 @@ captures
 local.properties
 
 .build/
-
+.gradle/
 androidApp/release/*
 

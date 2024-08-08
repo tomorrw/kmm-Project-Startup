@@ -3,9 +3,9 @@ package com.tomorrow.kmmProjectStartup.domain.utils
 expect class PhoneNumber(number: String?) {
     var number: String?
 
-    fun getFormattedNumberInOriginalFormat(): String?
+    fun getFormattedNumberInOriginalFormat(defaultCountryCode: String = "LB"): String?
 
-    fun isValid(): Boolean
+    fun isValid(defaultCountryCode: String = "LB"): Boolean
 
     var region: Region?
 }

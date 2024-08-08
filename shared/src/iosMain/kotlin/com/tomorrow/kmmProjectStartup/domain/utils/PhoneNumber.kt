@@ -22,8 +22,8 @@ actual class PhoneNumber actual constructor(number: String?) {
             field = value
         }
 
-    actual fun isValid(): Boolean =
-        number?.toNBPhoneNumberOrNull()?.let { phoneUtil.isValidNumber(it) } ?: false
+    actual fun isValid(defaultCountryCode: String): Boolean =
+        number?.toNBPhoneNumberOrNull(defaultCountryCode)?.let { phoneUtil.isValidNumber(it) } ?: false
 
     actual var region: Region?
         get() {
@@ -36,20 +36,20 @@ actual class PhoneNumber actual constructor(number: String?) {
         }
 
     @OptIn(ExperimentalForeignApi::class)
-    private fun String.toNBPhoneNumberOrNull(): NBPhoneNumber? {
+    private fun String.toNBPhoneNumberOrNull(defaultCountryCode: String = "LB"): NBPhoneNumber? {
         return try {
-            phoneUtil.parseAndKeepRawInput(this, "lb", null)
+            phoneUtil.parseAndKeepRawInput(this, defaultCountryCode.lowercase(), null)
         } catch (e: Exception) {
             null
         }
     }
 
     @OptIn(ExperimentalForeignApi::class)
-    actual fun getFormattedNumberInOriginalFormat(): String? =
+    actual fun getFormattedNumberInOriginalFormat(defaultCountryCode: String): String? =
         phoneNumber?.let {
             phoneUtil.formatInOriginalFormat(
                 it,
-                region?.alpha2Code ?: "lb",
+                region?.alpha2Code ?: defaultCountryCode.lowercase(),
                 null
             )
         }
