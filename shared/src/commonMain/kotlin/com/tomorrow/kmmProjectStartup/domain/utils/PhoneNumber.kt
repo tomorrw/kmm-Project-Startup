@@ -1,11 +1,11 @@
 package com.tomorrow.kmmProjectStartup.domain.utils
 
-expect class PhoneNumber(number: String?) {
+expect class PhoneNumber(number: String?, regionCode: String = "LB") {
     var number: String?
 
-    fun getFormattedNumberInOriginalFormat(defaultCountryCode: String = "LB"): String?
+    fun getFormattedNumberInOriginalFormat(): String?
 
-    fun isValid(defaultCountryCode: String = "LB"): Boolean
+    fun isValid(): Boolean
 
     var region: Region?
 }

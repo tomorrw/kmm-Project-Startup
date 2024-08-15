@@ -8,9 +8,9 @@ import cocoapods.libPhoneNumber_iOS.NBPhoneNumberUtil
 import kotlinx.cinterop.ExperimentalForeignApi
 import platform.Foundation.NSNumber
 
-actual class PhoneNumber actual constructor(number: String?) {
+actual class PhoneNumber actual constructor(number: String?, private val regionCode: String) {
     private val phoneUtil = NBPhoneNumberUtil()
-    private var phoneNumber: NBPhoneNumber? = number?.toNBPhoneNumberOrNull()
+    private var phoneNumber: NBPhoneNumber? = number?.toNBPhoneNumberOrNull(regionCode)
 
     @OptIn(ExperimentalForeignApi::class)
     actual var number: String? = number
@@ -22,8 +22,8 @@ actual class PhoneNumber actual constructor(number: String?) {
             field = value
         }
 
-    actual fun isValid(defaultCountryCode: String): Boolean =
-        number?.toNBPhoneNumberOrNull(defaultCountryCode)?.let { phoneUtil.isValidNumber(it) } ?: false
+    actual fun isValid(): Boolean =
+        number?.toNBPhoneNumberOrNull(regionCode)?.let { phoneUtil.isValidNumber(it) } ?: false
 
     actual var region: Region?
         get() {
@@ -45,11 +45,11 @@ actual class PhoneNumber actual constructor(number: String?) {
     }
 
     @OptIn(ExperimentalForeignApi::class)
-    actual fun getFormattedNumberInOriginalFormat(defaultCountryCode: String): String? =
+    actual fun getFormattedNumberInOriginalFormat(): String? =
         phoneNumber?.let {
             phoneUtil.formatInOriginalFormat(
                 it,
-                region?.alpha2Code ?: defaultCountryCode.lowercase(),
+                region?.alpha2Code ?: "LB",
                 null
             )
         }

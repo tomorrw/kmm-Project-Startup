@@ -3,21 +3,21 @@ package com.tomorrow.kmmProjectStartup.domain.utils
 import com.google.i18n.phonenumbers.PhoneNumberUtil
 import com.google.i18n.phonenumbers.Phonenumber
 
-actual class PhoneNumber actual constructor(number: String?) {
+actual class PhoneNumber actual constructor(number: String?, private var regionCode: String) {
     private val phoneUtil = PhoneNumberUtil.getInstance()
-    private var phoneNumber: Phonenumber.PhoneNumber? = number?.toPNumberOrNull()
+    private var phoneNumber: Phonenumber.PhoneNumber? = number?.toPNumberOrNull(regionCode)
 
     actual var number: String? = number
         get() = phoneNumber?.let {
             phoneUtil.format(it, PhoneNumberUtil.PhoneNumberFormat.INTERNATIONAL)
         } ?: field
         set(value) {
-            phoneNumber = value?.toPNumberOrNull()
+            phoneNumber = value?.toPNumberOrNull(regionCode)
             field = value
         }
 
-    actual fun isValid(defaultCountryCode: String): Boolean =
-        number?.toPNumberOrNull(defaultCountryCode)?.let { phoneUtil.isValidNumber(it) } ?: false
+    actual fun isValid(): Boolean =
+        number?.toPNumberOrNull(regionCode)?.let { phoneUtil.isValidNumber(it) } ?: false
 
     actual var region: Region?
         get() {
@@ -39,11 +39,11 @@ actual class PhoneNumber actual constructor(number: String?) {
         }
     }
 
-    actual fun getFormattedNumberInOriginalFormat(defaultCountryCode: String): String? =
+    actual fun getFormattedNumberInOriginalFormat(): String? =
         phoneNumber?.let {
             phoneUtil.formatInOriginalFormat(
                 phoneNumber,
-                region?.alpha2Code ?: defaultCountryCode
+                region?.alpha2Code ?: "LB"
             )
         }
 }
