@@ -133,9 +133,10 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            setUrl("https://github.com/tomorrw/kmm-Project-Startup")
+            setUrl("https://maven.pkg.github.com/tomorrw/kmm-Project-Startup")
             credentials {
-                username = "Marc-Jalkh"
+                username = ""
+                password = ""
             }
         }
     }

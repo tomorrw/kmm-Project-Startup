@@ -2,11 +2,16 @@
 
 package com.tomorrow.kmmProjectStartup.domain.utils
 
+
 import cocoapods.libPhoneNumber_iOS.NBEPhoneNumberFormatINTERNATIONAL
 import cocoapods.libPhoneNumber_iOS.NBPhoneNumber
 import cocoapods.libPhoneNumber_iOS.NBPhoneNumberUtil
 import kotlinx.cinterop.ExperimentalForeignApi
+import platform.Foundation.NSLocale
+import platform.Foundation.NSLocaleCountryCode
+import platform.Foundation.NSLocaleKey
 import platform.Foundation.NSNumber
+import platform.Foundation.currentLocale
 
 actual class PhoneNumber actual constructor(number: String?) {
     private val phoneUtil = NBPhoneNumberUtil()
@@ -53,4 +58,25 @@ actual class PhoneNumber actual constructor(number: String?) {
                 null
             )
         }
+}
+
+actual class Regions {
+    actual companion object {
+        private val phoneUtil = NBPhoneNumberUtil()
+
+        actual val supportedRegions: List<Region>
+            get() = (phoneUtil.getSupportedRegions() ?: listOf<String>())
+                .filterIsInstance<String>()
+                .mapNotNull {
+                    if (it == "ZZ" || it.length != 2) null
+                    else phoneUtil.getCountryCodeForRegion(it)
+                        ?.let { code -> Region(code.intValue, it) }
+                }
+
+
+        actual fun getCountryName(code: String): String {
+            val locale = NSLocale.currentLocale
+            return locale.displayNameForKey(NSLocaleCountryCode, code) ?: code
+        }
+    }
 }
