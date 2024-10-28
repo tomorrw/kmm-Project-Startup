@@ -1,3 +1,0 @@
-language = Objective-C
-modules = libPhoneNumber_iOS
-linkerOpts = -framework libPhoneNumber_iOS

@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name                     = 'kmmProjectStartup'
-    spec.version                  = '0.0.1'
+    spec.version                  = '1.0.15'
     spec.homepage                 = 'link to shared module'
     spec.source                   = { :http=> ''}
     spec.authors                  = 'Marc Jalkh'

@@ -2,6 +2,7 @@ package com.tomorrow.kmmProjectStartup.domain.utils
 
 import com.google.i18n.phonenumbers.PhoneNumberUtil
 import com.google.i18n.phonenumbers.Phonenumber
+import java.util.Locale
 
 actual class PhoneNumber actual constructor(number: String?) {
     private val phoneUtil = PhoneNumberUtil.getInstance()
@@ -46,4 +47,17 @@ actual class PhoneNumber actual constructor(number: String?) {
                 region?.alpha2Code ?: "LB"
             )
         }
+}
+
+actual class Regions {
+    actual companion object {
+        private val phoneNumberUtil: PhoneNumberUtil = PhoneNumberUtil.getInstance()
+
+        actual val supportedRegions: List<Region>
+            get() = phoneNumberUtil.supportedRegions
+                .map { Region(phoneNumberUtil.getCountryCodeForRegion(it), it) }
+                .distinct()
+
+        actual fun getCountryName(code: String) = Locale("", code).displayCountry
+    }
 }
