@@ -13,9 +13,9 @@ import platform.Foundation.NSLocaleKey
 import platform.Foundation.NSNumber
 import platform.Foundation.currentLocale
 
-actual class PhoneNumber actual constructor(number: String?) {
+actual class PhoneNumber actual constructor(number: String?, private val regionCode: String) {
     private val phoneUtil = NBPhoneNumberUtil()
-    private var phoneNumber: NBPhoneNumber? = number?.toNBPhoneNumberOrNull()
+    private var phoneNumber: NBPhoneNumber? = number?.toNBPhoneNumberOrNull(regionCode)
 
     @OptIn(ExperimentalForeignApi::class)
     actual var number: String? = number
@@ -28,7 +28,7 @@ actual class PhoneNumber actual constructor(number: String?) {
         }
 
     actual fun isValid(): Boolean =
-        number?.toNBPhoneNumberOrNull()?.let { phoneUtil.isValidNumber(it) } ?: false
+        number?.toNBPhoneNumberOrNull(regionCode)?.let { phoneUtil.isValidNumber(it) } ?: false
 
     actual var region: Region?
         get() {
@@ -41,9 +41,9 @@ actual class PhoneNumber actual constructor(number: String?) {
         }
 
     @OptIn(ExperimentalForeignApi::class)
-    private fun String.toNBPhoneNumberOrNull(): NBPhoneNumber? {
+    private fun String.toNBPhoneNumberOrNull(defaultCountryCode: String = "LB"): NBPhoneNumber? {
         return try {
-            phoneUtil.parseAndKeepRawInput(this, "lb", null)
+            phoneUtil.parseAndKeepRawInput(this, defaultCountryCode.lowercase(), null)
         } catch (e: Exception) {
             null
         }
@@ -54,7 +54,7 @@ actual class PhoneNumber actual constructor(number: String?) {
         phoneNumber?.let {
             phoneUtil.formatInOriginalFormat(
                 it,
-                region?.alpha2Code ?: "lb",
+                region?.alpha2Code ?: "LB",
                 null
             )
         }

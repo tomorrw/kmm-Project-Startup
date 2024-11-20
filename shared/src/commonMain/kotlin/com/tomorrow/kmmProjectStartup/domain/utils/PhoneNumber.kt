@@ -1,6 +1,6 @@
 package com.tomorrow.kmmProjectStartup.domain.utils
 
-expect class PhoneNumber(number: String?) {
+expect class PhoneNumber(number: String?, regionCode: String = "LB") {
     var number: String?
 
     fun getFormattedNumberInOriginalFormat(): String?

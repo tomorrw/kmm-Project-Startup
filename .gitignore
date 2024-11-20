@@ -58,6 +58,5 @@ captures
 local.properties
 
 .build/
-
 androidApp/release/*
-
+*.env
